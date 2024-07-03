@@ -4,36 +4,36 @@ import SimulacionFormulario from './components/Form'
 import Project from './simulation'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-/*function App() {
-  const [datos, setDatos] = useState([])
-  const [porcentajeClientesTristes, setPorcentajeClientesTristes] = useState(0)
+function App() {
+  const [data, setData] = useState([])
+  const [varEstadistica1, setVarEstadistica] = useState(0)
 
   const handleSimulacion = formValues => {
-    const { stockInicial, cantidadFilasASimular, filaASimularDesde, cantidadFilasAMostrar, pasoH } = formValues
-    const tp = new TrabajoPractico()
-    tp.STOCK_INICIAL = stockInicial
-    tp.CANTIDAD_DE_FILAS_A_SIMULAR = cantidadFilasASimular
-    tp.FILA_A_SIMULAR_DESDE = filaASimularDesde
-    tp.CANTIDAD_FILAS_A_MOSTRAR = cantidadFilasAMostrar
-    tp.PASO_H = pasoH
-    tp.comenzarEjecucion()
-    const resultados = tp.getResultados()
-    setDatos(resultados)
+    const { valorInicial, simulationNumberOfLines, line_since, simulationNumberOfLinesToShow } = formValues
+    const project = new Project()
+    project.VALOR_INICIAL_1 = valorInicial
+    project.NUMBER_OF_LINES = numberOfLines
+    project.LINE_SINCE = line_since
+    project.NUMBER_OF_LINES_TO_SHOW = numberOfLinesToShow
 
-    // Calcular el porcentaje de clientes tristes
-    const clientesTotales = resultados.length
+    project.start()
+    const results = project.getResults()
+    setData(results)
+
+    // Calcular la variable estadistica
+    /*const clientesTotales = resultados.length
     const clientesTristes = resultados.filter(fila => fila.evento === 'FinCoccionHorno').length
     const porcentaje = (clientesTristes / clientesTotales) * 100
-    setPorcentajeClientesTristes(porcentaje)
+    seprojectorcentajeClientesTristes(porcentaje)*/
   }
 
   return (
     <div className="App">
-      <h1>Simulación de Panadería</h1>
+      <h1>Simulación de Estacionamiento</h1>
       <SimulacionFormulario onSubmit={handleSimulacion} />
-      {datos.length > 0 && <SimulacionTabla data={datos} porcentajeClientesTristes={porcentajeClientesTristes} />}
+      {datos.length > 0 && <SimulacionTabla data={datos} variableEstadistica={variableEstadistica} />}
     </div>
   )
 }
 
-export default App*/
+export default App
