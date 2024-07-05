@@ -6,12 +6,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [data, setData] = useState([])
-  const [varEstadistica1, setVarEstadistica] = useState(0)
+  const [totalRevenue, avgProfit] = useState(0)
 
   const handleSimulacion = formValues => {
-    const { valorInicial, simulationNumberOfLines, line_since, simulationNumberOfLinesToShow } = formValues
+    const {simulationNumberOfLines, line_since, simulationNumberOfLinesToShow } = formValues
     const project = new Project()
-    project.VALOR_INICIAL_1 = valorInicial
     project.NUMBER_OF_LINES = numberOfLines
     project.LINE_SINCE = line_since
     project.NUMBER_OF_LINES_TO_SHOW = numberOfLinesToShow
@@ -21,17 +20,14 @@ function App() {
     setData(results)
 
     // Calcular la variable estadistica
-    /*const clientesTotales = resultados.length
-    const clientesTristes = resultados.filter(fila => fila.evento === 'FinCoccionHorno').length
-    const porcentaje = (clientesTristes / clientesTotales) * 100
-    seprojectorcentajeClientesTristes(porcentaje)*/
-  }
 
+  }
+//Modificar variableEstadistica={variableEstadistica} con lo correspondiente
   return (
     <div className="App">
       <h1>Simulación de Estacionamiento</h1>
-      <SimulacionFormulario onSubmit={handleSimulacion} />
-      {datos.length > 0 && <SimulacionTabla data={datos} variableEstadistica={variableEstadistica} />}
+      <Form onSubmit={handleSimulation} />
+      {data.length > 0 && <Table data={data} variableEstadistica={variableEstadistica} />}
     </div>
   )
 }

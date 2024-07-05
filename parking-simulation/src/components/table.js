@@ -69,7 +69,7 @@ const SimulacionTabla = ({ data,porcentajeClientesTristes }) => {
         </tbody>
       </Table>
       // Mostrar los resultados esperados al finalizar la simulación 
-      <p>Porcentaje de clientes tristes: {totalRevenue.toFixed(2)}%</p>
+      <p>Ganancia total: {totalRevenue.toFixed(2)}%</p>
       <p>Ganancia promedio por auto: {avgProfit.toFixed(2)}%</p>
     </Container>
    
