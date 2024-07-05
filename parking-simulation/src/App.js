@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Table from './components/Table'
-import SimulacionFormulario from './components/Form'
+import Form from './components/Form'
 import Project from './simulation'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -14,7 +14,6 @@ function App() {
     project.NUMBER_OF_LINES = numberOfLines
     project.LINE_SINCE = line_since
     project.NUMBER_OF_LINES_TO_SHOW = numberOfLinesToShow
-
     project.start()
     const results = project.getResults()
     setData(results)
