@@ -12,31 +12,29 @@ class Project {
     const data = {
       eventQueue: [],
       carsQueue: [],
-      att1: 0,
-      att2: 0,
+      revenue: 0,
+      driversQuantity: 0,
     }
 
     this.initializeEvents(data)
 
     for (let line = 1; line < this.NUMBER_OF_LINES; line++) {
-      const eventoInminente = this.encontrarEventoMasProximo(data)
+      const inminentEvent = this.findNextEvent(data)
 
-      eventoInminente.ocurreEvento(data)
+      inminentEvent.eventHappens(data)
 
       const lineData = {
-        clock: eventoInminente.clock,
-        event: eventoInminente.constructor.name,
-        nroCliente: eventoInminente.nroCliente,
-        stock: data.stock,
-        empleadosLibres: data.empleadosLibres,
+        clock: inminentEvent.clock,
+        event: inminentEvent.constructor.name,
+        driversID: inminentEvent.driversID,
         carsQueue: [...data.carsQueue],
         eventQueue: data.eventQueue.map(event => ({
-          clock: event.tiempo,
+          clock: event.time,
           clock: event.constructor.name,
           nroCliente: event.nroCliente,
         })),
       }
-
+//hasta aca
       if (line >= this.LINE_SINCE && line < this.LINE_SINCE + this.NUMBER_OF_LINES_TO_SHOW) {
         this.results.push({ ...lineData, lineNumber: line })
       }
@@ -75,7 +73,7 @@ class Project {
     this.param2 = param2 o calculo
   }
 
-  ocurreEvento(data) {
+  eventHappens(data) {
    logica
   }
 }*/
