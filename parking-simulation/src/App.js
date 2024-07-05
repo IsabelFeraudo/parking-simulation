@@ -9,10 +9,10 @@ function App() {
   const [totalRevenue, avgProfit] = useState(0)
 
   const handleSimulacion = formValues => {
-    const {simulationNumberOfLines, line_since, simulationNumberOfLinesToShow } = formValues
+    const {numberOfLines, lineSince, numberOfLinesToShow } = formValues
     const project = new Project()
     project.NUMBER_OF_LINES = numberOfLines
-    project.LINE_SINCE = line_since
+    project.LINE_SINCE = lineSince
     project.NUMBER_OF_LINES_TO_SHOW = numberOfLinesToShow
     project.start()
     const results = project.getResults()
