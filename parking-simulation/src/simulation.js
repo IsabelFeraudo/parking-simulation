@@ -1,10 +1,14 @@
 import { NUMBER_OF_LINES } from './components/Form'
 
 class Project {
-  constructor(initialX, numberOfLines) {
+  constructor(numberOfLines) {
+    this.NUMBER_OF_LINES = numberOfLines
+    this.results = []
+    this.driversQuantity = 0 // Contador para la cantidad total conductores atendidos
+    this.totalRevenue = 0
+    this.avgProfit =0
   }
-
-  comenzarEjecucion() {
+  start() {
     const data = {
       eventQueue: [],
       carsQueue: [],

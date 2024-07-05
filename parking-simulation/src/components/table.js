@@ -62,8 +62,8 @@ const SimulacionTabla = ({ data,porcentajeClientesTristes }) => {
                 ))}
               </td>
               <td>{line.driversQuantity}</td> 
-              <td>{line.driversQuantity}</td>
               <td>{line.revenue}</td>
+              <td>{line.driversState}</td>
             </tr>
           ))}
         </tbody>
