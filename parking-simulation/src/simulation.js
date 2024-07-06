@@ -21,20 +21,37 @@ class Project {
     for (let line = 1; line < this.NUMBER_OF_LINES; line++) {
       const inminentEvent = this.findNextEvent(data)
 
-      inminentEvent.eventHappens(data)
-
+      inminentEvent.eventHappens(data)     
+      
       const lineData = {
         clock: inminentEvent.clock,
         event: inminentEvent.constructor.name,
         driversID: inminentEvent.driversID,
+
+       // <td>{line.rndArrival}</td>
+        //<td>{line.timeBetweenArrivals}</td>
+      /*  <td>{line.nextArrival}</td>
+        <td>{line.rndParking}</td>
+        <td>{line.parkingTime}</td>
+        <td>{line.endParking}</td>
+        <td>{line.rndSize}</td>
+        <td>{line.size}</td>
+        <td>{line.endCharging}</td>
+        <td>{line.employeeState}</td>*/
+
         carsQueue: [...data.carsQueue],
+
+       /* <td>{line.parkinglotState}</td>
+        <td>{line.bigPlacements}</td>
+        <td>{line.smallPlacements}</td> 
+        <td>{line.utilsPlacements}</td> */
         eventQueue: data.eventQueue.map(event => ({
           clock: event.time,
-          clock: event.constructor.name,
-          nroCliente: event.nroCliente,
+          event: event.constructor.name,
+          driversID: event.driversID,
         })),
       }
-//hasta aca
+
       if (line >= this.LINE_SINCE && line < this.LINE_SINCE + this.NUMBER_OF_LINES_TO_SHOW) {
         this.results.push({ ...lineData, lineNumber: line })
       }
@@ -52,6 +69,7 @@ class Project {
     return foundEvent
   }
 
+  //hasta aca
   initializeEvents(data) {
     data.eventQueue.push(new Event1(, ))
 
@@ -63,7 +81,7 @@ class Project {
   }
 
   getResults() {
-    return this.resultados
+    return this.results
   }
 }
 
